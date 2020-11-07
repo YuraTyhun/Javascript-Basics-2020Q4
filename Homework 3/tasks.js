@@ -43,9 +43,8 @@ getAllMethods(Math); // → ["abs", "acos", "acosh", "asin", ...]
 /*task 5: Write a JS class with two methods run and stop. First methods starts displaying current time in console 
 in format ‘hh:mm:ss’ every second starting from now. Second method stops it. 
 In order to complete the task, you should create a class with methods in ES5 style.*/
-class Clock {
-    timerId;
-    run = function() {
+function Clock() {
+    this.run = function() {
         this.timerId = setInterval(() => { 
             let date = new Date();
             let hours = date.getHours() > 9 ? date.getHours() : `0${date.getHours()}`;
@@ -54,7 +53,7 @@ class Clock {
             console.log(`${hours}:${minutes}:${seconds}`);
         }, 1000);
     };
-    stop = function() {
+    this.stop = function() {
         clearInterval(this.timerId);
     };
 }
