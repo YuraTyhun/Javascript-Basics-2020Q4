@@ -6,7 +6,13 @@ const delay = ms => new Promise((resolve, reject) => {
 delay(1000).then(() => console.log('Hey!')); // → ‘Hey!’ in 1 second 
 
 /*task 2: Write a function to run an given array of promises in series, without using async/await syntax */
-const runPromisesInSeries = arrOfPromises => arrOfPromises.forEach(promise => promise())
+const runPromisesInSeries = arrOfPromises => {
+    arrOfPromises[0]().then(() => {
+        if(arrOfPromises.length > 1) {
+            runPromisesInSeries(arrOfPromises.slice(1));
+        }
+    });
+}
 
 runPromisesInSeries([ 
   () => delay(1000).then(() => { 
