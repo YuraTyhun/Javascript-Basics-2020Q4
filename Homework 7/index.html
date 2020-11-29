@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h3>Task 1:</h3>
+    <div class="task1__container">
+        <p class="width"></p>
+        <p class="height"></p>
+    </div>
+
+    <h3>Task 2:</h3>
+    <div class="task2__container">
+        <div class="task2_input-container">
+            <label>Search string:</label>
+            <input class="task2__search" type="text">
+            <label>Write your text here:</label>
+            <textarea class="task2__text-block" rows="10"></textarea>
+        </div>
+        <div class="task2__result-container">
+            <p class="task2__result-paragraph"></p>
+        </div>
+    </div>
+
+    <h3>Task 3:</h3>
+    <div>
+        <div class="task3__input-block">    
+            <div>
+                <input type="text">
+                <button onclick="onAddImage()">Add</button>
+            </div>
+            <div class="task3__timer">
+                <label> Timer (sec): </label>
+                <input type="number">
+            </div>
+        </div>
+        <div class="task3__image-block">
+            <span class="task3__arrow-left task3__arrow" >&#8249;</span>
+            <img class="task3__image">
+            <span class="task3__arrow-right task3__arrow" >&#8250;</span>
+        </div>
+    </div>
+
+    <h3>Task 4:</h3>
+    <div class="task4__container">
+        <div class="task4__table">
+            <div class="task4__row">
+                <div class="task4__column task4__column-left">&#9660; Name</div>
+                <div class="task4__column task4__column-right">&#9660; Surname</div>
+            </div>
+        </div>
+        <button class="task4__button-add">Add row</button>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>
