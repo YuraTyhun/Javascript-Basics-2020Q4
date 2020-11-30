@@ -1,10 +1,20 @@
 //task 1
 let pW = document.querySelector('.width');
 let pH = document.querySelector('.height');
+let isThrottled = false;
 
 windowSize();
 
-window.addEventListener('resize', windowSize)
+window.addEventListener('resize', () => {
+    if(!isThrottled) {
+        windowSize();
+        isThrottled = true;
+        
+        setTimeout(() => {
+            isThrottled = false;
+        }, 500);
+    }
+});
 
 function windowSize() {
     pW.innerText = `Width: ${window.innerWidth}`;
@@ -130,12 +140,17 @@ img.addEventListener('dblclick', event => {
 let btn = document.querySelector('.task4__button-add');
 let table = document.querySelector('.task4__table');
 let rowNumber = 1;
+let cellNumber = 1;
 
 btn.addEventListener('click', () => {
     let row = document.createElement('div');
     let col1 = document.createElement('div');
     let col2 = document.createElement('div');
     let col3 = document.createElement('div');
+
+    
+    col1.innerHTML = `Cell ${cellNumber}`;
+    col2.innerHTML = `Cell ${++cellNumber}`;
 
     if(rowNumber % 2 !== 0) {
         row.style = 'background-color: #ffffff';
@@ -152,6 +167,7 @@ btn.addEventListener('click', () => {
             }
         });
         rowNumber--;
+        cellNumber -= 2;
     });
 
     col1.addEventListener('dblclick', () => {
@@ -161,15 +177,9 @@ btn.addEventListener('click', () => {
         addInput(col2);
     });
     
-    
     col3.innerHTML = '&#128465;';
-    col3.style = `width: 5%;
-                  font-weight: bold; 
-                  font-size: 20px;
-                  border-left: 1px solid #000000;
-                  text-align: center;
-                  cursor: pointer`;
-
+    col3.className = 'task4__bin';
+    
     col1.classList = 'task4__column-left task4__column';
     col2.classList = 'task4__column';
     row.className = 'task4__row';
@@ -178,6 +188,7 @@ btn.addEventListener('click', () => {
     table.appendChild(row);
 
     rowNumber++;
+    cellNumber += 2;
 });
 
 function addInput(column) {

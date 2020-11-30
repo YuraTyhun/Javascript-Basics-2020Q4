@@ -126,6 +126,11 @@ body {
 
 .task4__bin {
     width: 5%;
+    font-weight: bold; 
+    font-size: 20px;
+    border-left: 1px solid #000000;
+    text-align: center;
+    cursor: pointer;
 }
 
 .task4__button-add {
