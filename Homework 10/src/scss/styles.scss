@@ -1,0 +1,173 @@
+.app {
+    &__container {
+        width: 800px;
+        min-height: 650px;
+        margin: 0 auto 20px;
+        color: #ffffff;
+        border: 2px solid lightgray;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #1b97f3;
+        height: 75px;
+        color: #ffffff;
+
+        input.search {
+            position: relative;
+            width: 200px;
+            height: 30px;
+            background-color: transparent;
+            outline: none;
+            border: none;
+            color:#ffffff;
+            border-bottom: 2px solid #ffffff;
+
+            &::-webkit-input-placeholder {
+                color:#ffffff;
+                font-size: 18px;
+                margin-bottom: 10px; 
+            }
+        }
+
+        &--input {
+            position: relative;
+
+            i {
+                position: absolute;
+                right: 5px;
+                top: 5px;
+            }
+        }
+    }
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 70%;
+        margin: 50px auto;
+
+        &-add--container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        input.new-task {
+            width: 400px;
+            height: 30px;
+            background-color: transparent;
+            outline: none;
+            border: none;
+            color: gray;
+            border-bottom: 2px solid lightgray;
+
+            &::-webkit-input-placeholder {
+                color: gray;
+                font-size: 18px;
+                margin-bottom: 10px; 
+            }
+        }
+
+        &-add--btn {
+            width: 90px;
+            height: 40px;
+            margin-bottom: 5px;
+            outline: none;
+            border: none;
+            background-color: #ffffff;
+            box-shadow: 0px 3px 5px lightgray;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        &-tasks {
+            &--container {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 40px;
+                
+                h3 {
+                    color: #000;
+                }
+            }
+
+            &--header {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+
+                select {
+                    padding-bottom: 7px;
+                    width: 200px;
+                    border: none;
+                    border-bottom: 1px solid lightgray;
+                    outline: none;
+                }
+            }
+
+            &--list {
+                display: flex;
+                flex-direction: column;
+                margin-top: 40px;
+                color: #000;
+            }
+
+            &--item {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+                margin-bottom: 10px;
+                min-height: 75px;
+                border: 1px solid lightgray;
+                border-radius: 10px;
+
+                &:hover &-trash {
+                    display: flex;
+                }
+
+                &-checkbox {
+                    width: 20px;
+                    height: 20px;
+                }
+
+                &-text {
+                    width: 50%;
+                    padding: 10px 0;
+                }
+
+                &-time {
+                    width: 15%;
+                }
+
+                &-trash {
+                    display: none;
+                    align-items: center;
+                    justify-content: center;
+                    width: 5%;
+                    font-size: 25px;
+                    cursor: pointer;
+                }
+            }
+
+            &--clear {
+                color: #000000;
+                margin-top: 20px;
+                text-align: right;
+
+                &-open-btn, &-done-btn {
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

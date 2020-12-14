@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>ToDo List</title>
+</head>
+<body>
+  <div class="app__container">
+    <header class="app__header">
+      <div>
+        Todo List
+      </div>
+      <div class="app__header--input">
+        <input type="text" class="search" placeholder="Search...">
+        <i class="fa fa-search"></i>
+      </div>
+    </header>
+    <div class="app__main">
+      <div class="app__main-add--container">
+        <input type="text" class="new-task" placeholder="New task...">
+        <button  class="app__main-add--btn">ADD</button>
+      </div>
+
+      <div class="app__main-tasks--container">
+        <div class="app__main-tasks--header">
+          <h3>Open</h3>
+          <select id="open-list-sort">
+            <option value="date-desc">Date creation (Desc)</option>
+            <option value="date-asc">Date creation (Asc)</option>
+            <option value="text-desc">Text (Desc)</option>
+            <option value="text-asc">Text (Asc)</option>
+          </select>
+        </div>
+
+        <div class="app__main-tasks--list open-list">
+          
+        </div>
+        <div class="app__main-tasks--clear">
+          <button class="app__main-tasks--clear-open-btn">Clear "Open" list</button>
+        </div>
+      </div>
+
+      <div class="app__main-tasks--container">
+        <div class="app__main-tasks--header">
+          <h3>Done</h3>
+          <select id="done-list-sort">
+            <option value="due-date-desc">Due Date (Desc)</option>
+            <option value="due-date-asc">Due Date (Asc)</option>
+            <option value="text-desc">Text (Desc)</option>
+            <option value="text-asc">Text (Asc)</option>
+          </select>
+        </div>
+
+        <div class="app__main-tasks--list done-list">
+          
+        </div>
+        <div class="app__main-tasks--clear">
+          <button class="app__main-tasks--clear-done-btn">Clear "Done" list</button>
+        </div>
+      </div>
+
+    </div>
+  </div>  
+</body>
+</html>
